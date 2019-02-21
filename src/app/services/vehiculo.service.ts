@@ -19,16 +19,16 @@ export class VehiculoService {
   }
 
   consultarVehiculos(): Observable<Vehiculo[]> {
-    return this.http.get(`${this.baseUrl}/consultaVehiculos`).pipe(
+    return this.http.get(`${this.baseUrl}/consultavehiculos`).pipe(
       map(data => data as Vehiculo[])
     );
   }
 
   registrarEntradaVehiculo(vehiculo: Vehiculo): Observable<Vehiculo> {
-    return this.http.post<Vehiculo>(`${this.baseUrl}/registroEntrada`, vehiculo, {headers: this.httpHeaders});
+    return this.http.post<Vehiculo>(`${this.baseUrl}/registroentrada`, vehiculo, {headers: this.httpHeaders});
   }
 
   registrarSalidaVehiculo(id: number): Observable<Vehiculo> {
-    return this.http.get<Vehiculo>(`${this.baseUrl}/registroSalida/${id}`, {headers: this.httpHeaders});
+    return this.http.get<Vehiculo>(`${this.baseUrl}/registrosalida/${id}`, {headers: this.httpHeaders});
   }
 }
