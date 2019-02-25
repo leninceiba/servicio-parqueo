@@ -12,7 +12,6 @@ import { retry, catchError } from 'rxjs/operators';
 export class VehiculoService {
 
   private baseUrl = 'http://localhost:8080/api';
-  private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor( private http: HttpClient ) {
     console.log('Estacionamiento Funcionando');
@@ -25,10 +24,10 @@ export class VehiculoService {
   }
 
   registrarEntradaVehiculo(vehiculo: Vehiculo): Observable<Vehiculo> {
-    return this.http.post<Vehiculo>(`${this.baseUrl}/registroentrada`, vehiculo, {headers: this.httpHeaders});
+    return this.http.post<Vehiculo>(`${this.baseUrl}/registroentrada`, vehiculo);
   }
 
   registrarSalidaVehiculo(id: number): Observable<Vehiculo> {
-    return this.http.get<Vehiculo>(`${this.baseUrl}/registrosalida/${id}`, {headers: this.httpHeaders});
+    return this.http.get<Vehiculo>(`${this.baseUrl}/registrosalida/${id}`);
   }
 }
