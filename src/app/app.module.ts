@@ -5,9 +5,6 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorInterceptor } from './http-error.interceptor';
-import { AddCustomerComponent } from './components/add-customer/add-customer.component';
-import { EditCustomerComponent } from './components/edit-customer/edit-customer.component';
-import { ListCustomerComponent } from './components/list-customer/list-customer.component';
 
 // Importar rutas
 import { ROUTES } from './app.routes';
@@ -21,9 +18,6 @@ import { ListVehiculoComponent } from './components/list-vehiculo/list-vehiculo.
 @NgModule({
   declarations: [
     AppComponent,
-    AddCustomerComponent,
-    EditCustomerComponent,
-    ListCustomerComponent,
     AddVehiculoComponent,
     ListVehiculoComponent
   ],
